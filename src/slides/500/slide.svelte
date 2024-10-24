@@ -3,13 +3,12 @@
 	let video: HTMLVideoElement
 </script>
 
+<!-- svelte-ignore a11y_media_has_caption -->
+<video bind:this={video} controls class="pointer-events-none">
+	<source src="sineater.webm" />
+</video>
 <Transition
 	do={async () => {
 		video.play()
 	}}
->
-	<!-- svelte-ignore a11y_media_has_caption -->
-	<video bind:this={video} controls class="pointer-events-none">
-		<source src="sineater.webm" />
-	</video>
-</Transition>
+></Transition>

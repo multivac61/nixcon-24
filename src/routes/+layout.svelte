@@ -5,7 +5,8 @@
 </script>
 
 <svelte:head>
-	<title>Animotion</title>
+	<title>Deterministic* Firmware in Nix</title>
 </svelte:head>
 
 {@render children()}
+

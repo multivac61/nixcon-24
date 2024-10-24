@@ -1,56 +1,24 @@
 <script lang="ts">
 	import { Transition } from '@animotion/core'
 
-	let items = $state([1, 2, 3, 4])
-	let layout = $state('flex gap-4')
+	let text: HTMLParagraphElement
 </script>
 
 <Transition>
-	<p class="text-6xl font-bold drop-shadow-sm">🪄 Layout Animations</p>
+	<p bind:this={text} class="text-8xl font-bold drop-shadow-sm">Who am I?</p>
 </Transition>
 
 <Transition
-	do={() => {
-		items = [1, 2, 3, 4]
-		layout = 'flex gap-4'
+	do={async () => {
+		text.classList.replace('text-8xl', 'text-6xl')
 	}}
 	class="mt-16"
 >
-	<div class={layout}>
-		{#each items as item (item)}
-			<Transition
-				class="grid h-[180px] w-[180px] place-content-center rounded-2xl border-t-2 border-white bg-gray-200 text-6xl font-semibold text-black shadow-2xl"
-				enter="rotate"
-				visible
-			>
-				{item}
-			</Transition>
-		{/each}
-	</div>
+	<ul class="flex min-w-4xl flex-col gap-8 text-left">
+		<Transition><li>🇮🇸</li></Transition>
+		<Transition><li>Alive for 32+ years</li></Transition>
+		<Transition><li>Building Genki for 10+ years</li></Transition>
+		<Transition><li>Writing firmware (ASM, C, C++, Rust) for 9+ years</li></Transition>
+		<Transition><li>Nix enthusist for 2+ years</li></Transition>
+	</ul>
 </Transition>
-
-<Transition
-	do={() => {
-		layout = 'grid grid-cols-2 grid-rows-2 gap-4'
-		items = [4, 3, 2, 1]
-	}}
-/>
-<Transition
-	do={() => {
-		layout = 'grid grid-cols-2 grid-rows-2 gap-4'
-		items = [2, 1, 4, 3]
-	}}
-/>
-<Transition
-	do={() => {
-		layout = 'grid grid-cols-2 grid-rows-2 gap-4'
-		items = [4, 3, 2, 1]
-	}}
-/>
-<Transition
-	do={() => {
-		layout = 'grid grid-cols-2 grid-rows-2 gap-4'
-		items = [1, 2, 3, 4]
-	}}
-/>
-<Transition do={() => (layout = 'flex gap-4')} />

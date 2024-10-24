@@ -7,7 +7,7 @@
 		history: true,
 		transition: 'slide',
 		controls: false,
-		progress: true,
+		progress: false
 	}}
 >
 	<Slides center={true} />

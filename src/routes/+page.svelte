@@ -5,7 +5,6 @@
 <Presentation
 	options={{
 		history: true,
-		transition: 'slide',
 		controls: false,
 		progress: false
 	}}

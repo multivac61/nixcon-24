@@ -1,22 +1,19 @@
 <script lang="ts">
 	import { Transition } from '@animotion/core'
+	import { onMount } from 'svelte'
+	let y = $state(0)
+
+	onMount(() => {
+		setInterval(() => {
+			y = Math.sin(Date.now() / 500) * 10
+		}, 16)
+	})
 
 	let text: HTMLParagraphElement
 </script>
 
-<p bind:this={text} class="text-8xl font-bold drop-shadow-sm">Deterministic Firmware in Nix</p>
+<Transition><h1 bind:this={text} class=" flex items-center justify-center text-8xl font-bold drop-shadow-sm">Deterministic* Firmware in Nix</h1></Transition>
 
-<Transition
-	do={async () => {
-		text.textContent = 'Deterministic* Firmware in Nix'
-	}}
-></Transition>
-
-<Transition
-	do={async () => {
-		text.classList.replace('text-8xl', 'text-6xl')
-	}}
-	class="mt-16"
->
-	<img class="drop-shadow-md" src="nix.svg" alt="Nix logo" />
+<Transition class="mt-32">
+	<img src="nixcon24.svg" style:transform="translateY({y}px)" style:transition="transform 0.1s ease-out" alt="Floating" />
 </Transition>

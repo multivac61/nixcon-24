@@ -6,13 +6,7 @@
 	let pedro: HTMLImageElement
 </script>
 
-<Transition
-	do={async () => {
-		text.classList.replace('text-6xl', 'text-8xl')
-	}}
->
-	<p bind:this={text} class="text-8xl font-bold drop-shadow-sm">What is Genki?</p>
-</Transition>
+<Transition><p bind:this={text} class="text-8xl font-bold drop-shadow-sm">Genki?</p></Transition>
 
 <Transition
 	do={async () => {
@@ -31,6 +25,6 @@
 	do={async () => {
 		pedro.hidden = true
 		viktor.hidden = false
-		viktor.play()
+		await viktor.play()
 	}}
 ></Transition>

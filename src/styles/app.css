@@ -21,7 +21,7 @@
 
 /* defaults */
 :root {
-	--r-background-color: oklch(20% 0.01 272);
+	--r-background-color: #000000;
 	--r-main-font: 'Manrope Variable';
 	--r-main-font-size: 42px;
 	--r-main-color: oklch(98% 0.02 272);

@@ -1,17 +1,16 @@
 <script lang="ts">
-	import { Action, Code, Transition } from '@animotion/core'
+	import { Code } from '@animotion/core'
 
 	let code: ReturnType<typeof Code>
 </script>
 
-<Transition class="bg-[#1E1E2E]"
-	><div class="m-0 border-none bg-[#1E1E2E] p-0">
-		<Code
-			bind:this={code}
-			lang="nix"
-			theme="catppuccin-mocha"
-			options={{ duration: 1000, stagger: 0.3, containerStyle: false }}
-			code={`{ clangStdenv
+<div class="border-none">
+	<Code
+		bind:this={code}
+		lang="nix"
+		theme="catppuccin-mocha"
+		options={{ duration: 1000, stagger: 0.3, containerStyle: false }}
+		code={`{ clangStdenv
 , runCommand
 , xorg
 , gcc-arm-embedded
@@ -144,13 +143,13 @@ clangStdenv.mkDerivation {
     pkg-config
   ];
 }`}
-		/>
-	</div>
-</Transition>
+	/>
+</div>
 
 <style>
 	* {
-		font-size: 10px;
-		line-height: 4px;
+		font-size: 9.5px;
+		line-height: 5px;
+		background-color: #1e1e2e;
 	}
 </style>

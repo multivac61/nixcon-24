@@ -4,7 +4,7 @@
 	let code: ReturnType<typeof Code>
 </script>
 
-<div class="border-none">
+<div class="flex h-screen w-screen items-center justify-center border-none bg-[#1e1e2e]">
 	<Code
 		bind:this={code}
 		lang="nix"
@@ -148,8 +148,10 @@ clangStdenv.mkDerivation {
 
 <style>
 	* {
-		font-size: 9.5px;
-		line-height: 5px;
+		font-size: 10.5px;
 		background-color: #1e1e2e;
+	}
+	div {
+		background-color: #1e1e2e !important;
 	}
 </style>
